@@ -96,7 +96,7 @@ if [ _"$TYPE" = _"MASTER" ]; then
   echo "##Step 4: kubeadm init" |tee -a $INSTALL_LOG
   rm -rf /etc/kubernetes/manifests/
   rm -rf /etc/kubernetes/kubelet.conf /etc/kubernetes/admin.conf
-  kubeadm init |tee -a $INSTALL_LOG
+  kubeadm init --use-kubernetes-version v1.5.1 |tee -a $INSTALL_LOG
 
   date |tee -a $INSTALL_LOG
   echo "##Step 5: taint nodes..." |tee -a $INSTALL_LOG
