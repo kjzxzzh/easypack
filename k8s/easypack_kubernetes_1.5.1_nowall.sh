@@ -65,7 +65,7 @@ PAUSE="pause-amd64:3.0"
 ETCD="etcd-amd64:2.2.5"
 DNS="kubedns-amd64:1.9 "
 DNSMASQ="kube-dnsmasq-amd64:1.3"
-HEALTHZ="exechealthz-amd64:1.2"
+HEALTHZ="exechealthz-amd64:1.1"
 DASHBOARD="kubernetes-dashboard-amd64:v1.5.1"
 METRICS="dnsmasq-metrics-amd64:1.0"
 
