@@ -72,17 +72,17 @@ METRICS="dnsmasq-metrics-amd64:1.0"
 ALL_IMAGES="${PROXY} ${DISCOVERY} ${SCHEDULER} ${CONTROLLER} ${APISERVER} ${PAUSE} ${ETCD} ${DNS} ${DNSMASQ} ${HEALTHZ} ${DASHBOARD} ${METRICS}"
 
 CNT=0
-echo "Now begin to pull images from liumiaocn" |tee -a $INSTALL_LOG
+echo "Now begin to pull images from mritd" |tee -a $INSTALL_LOG
 for image in ${ALL_IMAGES}
 do
   CNT=`expr ${CNT} + 1`
   echo "No.${CNT} : ${image} pull begins ..." |tee -a $INSTALL_LOG
-  docker pull liumiaocn/${image} >> $INSTALL_LOG 2>&1
+  docker pull mritd/${image} >> $INSTALL_LOG 2>&1
   echo "No.${CNT} : ${image} pull ends   ..." |tee -a $INSTALL_LOG
   echo "No.${CNT} : ${image} rename      ..." |tee -a $INSTALL_LOG
-  docker tag liumiaocn/${image}  gcr.io/google_containers/${image} >> $INSTALL_LOG 2>&1
+  docker tag mritd/${image}  gcr.io/google_containers/${image} >> $INSTALL_LOG 2>&1
   echo "No.${CNT} : ${image} untag       ..." |tee -a $INSTALL_LOG
-  docker rmi  liumiaocn/${image} >> $INSTALL_LOG 2>&1
+  docker rmi  mritd/${image} >> $INSTALL_LOG 2>&1
   echo "" |tee -a $INSTALL_LOG
 done
 
