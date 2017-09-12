@@ -77,7 +77,7 @@ for image in ${ALL_IMAGES}
 do
   CNT=`expr ${CNT} + 1`
   echo "No.${CNT} : ${image} pull begins ..." |tee -a $INSTALL_LOG
-  docker pull mritd/${image} >> $INSTALL_LOG 2>&1
+  docker pull mritd/${image}
   echo "No.${CNT} : ${image} pull ends   ..." |tee -a $INSTALL_LOG
   echo "No.${CNT} : ${image} rename      ..." |tee -a $INSTALL_LOG
   docker tag mritd/${image}  gcr.io/google_containers/${image} >> $INSTALL_LOG 2>&1
